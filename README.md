@@ -13,7 +13,7 @@ software_testing_project/
 │   └── hintProvider.js           # Hint data per topic
 ├── spec/
 │   ├── mentorService.spec.js     # Unit tests
-│   ├── progressTracker.spec.js   # Unit + integration tests
+│   ├── progressTracker.spec.js   # Unit tests
 │   ├── integration.spec.js       # Integration tests
 │   └── support/jasmine.json
 ├── jmeter/
@@ -65,7 +65,7 @@ Server runs on `http://localhost:3000`.
 npm test
 ```
 
-**Result: 17 specs, 0 failures**
+**Result: 17 specs, 0 failures, 1 pending (skipped on purpose with xit)**
 
 ## Testing
 
@@ -74,13 +74,12 @@ npm test
 Tests cover `MentorService` and `ProgressTracker` using stubs, spies, driver functions, and `beforeEach`/`afterEach` hooks.
 
 ```
-17 specs, 0 failures
-Finished in 0.045 seconds
+17 specs, 0 failures, 1 pending (skipped on purpose with xit)
 ```
 
 ### API Tests — Postman
 
-The Postman collection (`postman/mentor.postman_collection.json`) contains 22 requests covering all endpoints, status codes, and edge cases.
+The Postman collection (`postman/mentor.postman_collection.json`) contains 13 requests covering all endpoints, status codes, and edge cases.
 
 ```
 22 / 22 tests passed
@@ -90,7 +89,7 @@ The Postman collection (`postman/mentor.postman_collection.json`) contains 22 re
 
 ### Performance Tests — JMeter
 
-The JMeter plan (`jmeter/mentor.jmx`) runs 50 threads × 5 loops = 250 iterations per sampler across 4 requests, producing 1000 total samples.
+The JMeter plan (`jmeter/mentor.jmx`) runs 50 threads × 5 loops = 250 samples per request across 4 requests, producing 1000 total samples.
 
 ```
 1000 samples — 0.00% error rate
@@ -103,4 +102,4 @@ The JMeter plan (`jmeter/mentor.jmx`) runs 50 threads × 5 loops = 250 iteration
 | Package | Purpose |
 |---------|---------|
 | `express` | HTTP server and routing |
-| `jasmine` | Unit and integration testing (dev) |
+| `jasmine` | Unit and integration testing (dev dependency) |
