@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{baseUrl}}/sessions/{{sessionId}}/hint"
+method: POST
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('status is 409', function () {
+          pm.response.to.have.status(409);
+      });
+      pm.test('error is returned', function () {
+          pm.expect(pm.response.json().error).to.be.a('string');
+      });
+    language: text/javascript
+order: 13000

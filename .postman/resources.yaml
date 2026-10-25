@@ -1,0 +1,13 @@
+# Use this workspace to collaborate
+workspace:
+  id: 44c866e4-595b-4377-8cce-3f56249ab4ea
+
+cloudResources:
+  collections:
+    ../postman/collections/Socratic Programming Mentor: 8ba20864-dd1f-477f-9014-dfa23b8d9d63
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/

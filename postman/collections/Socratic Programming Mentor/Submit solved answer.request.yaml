@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}/sessions/{{sessionId}}/answer"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: '{"solved":true}'
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('status is 200', function () {
+          pm.response.to.have.status(200);
+      });
+      pm.test('progress is returned', function () {
+          pm.expect(pm.response.json()).to.have.all.keys('level', 'overallScore');
+      });
+    language: text/javascript
+order: 3000

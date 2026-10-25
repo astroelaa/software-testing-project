@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}/sessions"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: '{"topic":"loops"}'
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('status is 201', function () {
+          pm.response.to.have.status(201);
+      });
+      pm.collectionVariables.set('sessionId', pm.response.json().sessionId);
+    language: text/javascript
+order: 9000
