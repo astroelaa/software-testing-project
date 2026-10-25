@@ -1,0 +1,15 @@
+{
+  "name": "socratic-programming-mentor",
+  "version": "1.0.0",
+  "main": "src/mentorService.js",
+  "scripts": {
+    "test": "jasmine",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jasmine": "^5.1.0"
+  }
+}
