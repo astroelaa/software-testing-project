@@ -7,18 +7,17 @@ A Node.js REST API that guides learners through programming topics using the Soc
 ```
 software_testing_project/
 ├── src/
-│   ├── app.js              # Express routes
-│   ├── server.js           # Entry point
-│   ├── mentorService.js    # Session and hint logic
-│   ├── progressTracker.js  # Scoring and level logic
-│   └── hintProvider.js     # Hint data per topic
+│   ├── app.js                    # Express routes
+│   ├── mentorService.js          # Session and hint logic
+│   ├── progressTracker.js        # Scoring and level logic
+│   └── hintProvider.js           # Hint data per topic
 ├── spec/
 │   ├── mentorService.spec.js     # Unit tests
 │   ├── progressTracker.spec.js   # Unit + integration tests
 │   ├── integration.spec.js       # Integration tests
 │   └── support/jasmine.json
 ├── jmeter/
-│   └── mentor.jmx          # JMeter performance test plan
+│   └── mentor.jmx                # JMeter performance test plan
 ├── postman/
 │   └── mentor.postman_collection.json
 ├── screenshots/
@@ -35,7 +34,7 @@ software_testing_project/
 | `POST` | `/sessions` | Start a new learning session |
 | `POST` | `/sessions/:id/hint` | Get the next hint for a session |
 | `POST` | `/sessions/:id/answer` | Submit an answer (solved: true/false) |
-| `GET` | `/progress` | Get overall score and level |
+| `GET`  | `/progress` | Get overall score and level |
 
 ## Scoring
 
